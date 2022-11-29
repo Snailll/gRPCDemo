@@ -1,0 +1,20 @@
+syntax = "proto3";
+package protocol;
+
+//import "file.proto";
+
+option go_package = "protocol";
+option java_multiple_files = true;
+option java_package = "com.demo.shell.protocol";
+
+message Webshell {
+
+  string pwd = 1;
+  string cmd = 2;
+}
+
+
+service WebShellService {
+  rpc exec (Webshell) returns (Webshell) {}
+}
+
